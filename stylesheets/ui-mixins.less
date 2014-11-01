@@ -4,13 +4,13 @@
 .color-tree(@extension, @type, @color){
 
   .name.icon[data-name$="@{extension}"] {
+    left: -3px;
     color: @color;
-    &.icon-file-text, &.icon-file-media, &.icon-book {
-    //  color: @color;
-      &:before {
-        font-family:"devicons";
-        content: @type;
-      }
+    &:before {
+      top: 6px;
+      font-family:"devicons";
+      content: @type;
+      font-size: 18px;
     }
   }
 }
