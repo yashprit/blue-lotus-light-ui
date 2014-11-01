@@ -1,14 +1,15 @@
 @import "ui-variables";
 
 
-.color-tree(@extension, @color){
+.color-tree(@extension, @type, @color){
 
   .name.icon[data-name$="@{extension}"] {
     color: @color;
     &.icon-file-text, &.icon-file-media, &.icon-book {
-      color: @color;
+    //  color: @color;
       &:before {
-
+        font-family:"devicons";
+        content: @type;
       }
     }
   }
