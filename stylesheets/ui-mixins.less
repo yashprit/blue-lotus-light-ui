@@ -1,5 +1,20 @@
 @import "ui-variables";
 
+
+.color-tree(@extension, @color){
+
+  .name.icon[data-name$="@{extension}"] {
+    color: @color;
+    &.icon-file-text, &.icon-file-media, &.icon-book {
+      color: @color;
+      &:before {
+
+      }
+    }
+  }
+}
+
+
 // Pattern matching; ish is cray.
 // http://lesscss.org/#-pattern-matching-and-guard-expressions
 .text(normal) {
