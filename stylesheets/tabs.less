@@ -34,7 +34,7 @@
     top: @tab-top-padding;
     max-width: @tab-max-width;
     height: @tab-height;
-    line-height: @tab-height;
+    line-height: @tab-height - 6px;
     color: @tab-text-color;
     padding: 0;
     margin: 0 20px 0 5px;
@@ -72,12 +72,13 @@
       //border-right: @tab-border;
       //box-shadow: inset -1px -1px 1px rgba(0,0,0, .05);
       //-webkit-transform: skewX(@tab-skew);
-      border-right: 1px solid #000;
+      //border-right: 1px solid #000;
     }
 
     .close-icon {
-      right: 0;
+      right: -5px;
       z-index: 3;
+      top: -3px;
       text-align: right;
       line-height: @tab-height;
       color: @tab-text-color;
@@ -89,7 +90,7 @@
 
     &.modified:not(:hover) .close-icon {
       right: 0;
-      top: @tab-height/2 - @modified-icon-width/2 + 1px;
+      top:  -1px;
       width: @modified-icon-width;
       height: @modified-icon-width;
     }
@@ -120,7 +121,7 @@
     background: @tab-active-background;
 
     .close-icon {
-      line-height: @tab-height - 1px;
+      line-height: @tab-height;
       color: @tab-text-color;
       &:hover{
         color:  @tab-text-color-highlight;
