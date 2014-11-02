@@ -3,13 +3,13 @@
 @modified-icon-width: 8px;
 @tab-skew: 30deg;
 @tab-top-padding: 0px;
-@tab-bottom-border-height: 0px;
+@tab-top-border-height: 4px;
 @tab-border: 1px solid @tab-border-color;
 @tab-max-width: 160px;
 
 
 .tab-bar {
-  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  height: @tab-height;
   //background-image: -webkit-linear-gradient(top, @tab-bar-background-color, lighten(@tab-bar-background-color, 9%));
   //box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
   padding: 0 10px;
@@ -21,7 +21,7 @@
     content: "";
     position: absolute;
     bottom: 0;
-    //height: @tab-bottom-border-height;
+    //height: @tab-top-border-height;
     left: 0px;
     width: 100%;
     //background-color: @tab-background-color-active;
@@ -39,19 +39,19 @@
     padding: 0;
     margin: 0 20px 0 5px;
     cursor:pointer;
-    box-shadow: inset -1px -1px 1px rgba(0,0,0, .05);
+    //box-shadow: inset -1px -1px 1px rgba(0,0,0, .05);
     transition: color .1s ease-in;
-
+    top: 0px;
     &, &:before, &:after {
       //background-image: -webkit-linear-gradient(top, @tab-background-color, darken(@tab-background-color, 6%));
-      //border-top: @tab-border;
-      border-bottom: 4px solid @tab-active-background;
+      border-top: 4px solid #EEE;
+      //border-bottom: 4px solid @tab-active-background;
     }
 
     &:before, &:after {
       content: '';
       position: absolute;
-      top: 0px;
+      top: -4px;
       width: 25px;
       height: @tab-height;
     }
@@ -116,7 +116,7 @@
   .tab.active {
     z-index: 1;
     color: @tab-color-hover;
-    border-bottom: 4px solid @tab-active-border-color;
+    border-top: 4px solid @tab-active-border-color;
     background: @tab-active-background;
 
     .close-icon {
@@ -131,9 +131,15 @@
       background: @tab-background-color-active;
       height: @tab-height;
       box-shadow: none;
-      border-bottom: 4px solid @tab-active-border-color;
     }
 
+  }
+
+  .tab.active{
+    border-top: 4px solid @tab-active-border-color;
+    &:after, &:before{
+      border-top: 4px solid @tab-active-border-color;
+    }
   }
 
   .tab:hover {
@@ -149,9 +155,9 @@
   }
 
   .placeholder {
-    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    height: @tab-height + @tab-top-padding + @tab-top-border-height;
     &:after {
-      top: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+      top: @tab-height + @tab-top-padding + @tab-top-border-height;
     }
   }
 }
