@@ -1,9 +1,9 @@
 {
-  "name": "atom-blue-lotus-light-ui",
+  "name": "blue-lotus-light-ui",
   "theme": "ui",
   "version": "0.1.2",
   "description": "Default light theme for interface components",
-  "repository": "https://github.com/yashprit/atom-enhance-light-ui.git",
+  "repository": "https://github.com/yashprit/blue-lotus-light-ui.git",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
